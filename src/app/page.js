@@ -19,14 +19,14 @@ export default async function HomePage() {
   const home = await getHomePage();
 
   return (
-    <section className="min-h-screen bg-slate-50 px-6 py-20">
+    <section className="min-h-screen bg-slate-50 px-6 py-14 sm:py-20">
       <div className="mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-[1.15fr_0.85fr]">
         <div>
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
             {home?.smallHeading || "Communications & Policy"}
           </p>
 
-          <h1 className="max-w-4xl text-5xl font-bold leading-tight text-slate-900">
+          <h1 className="max-w-4xl text-4xl font-bold leading-tight text-slate-900 sm:text-5xl">
             {home?.mainHeadline ||
               "Clear, thoughtful communication for policy, people, and public impact."}
           </h1>
@@ -36,7 +36,7 @@ export default async function HomePage() {
               "A portfolio showcasing newsletters, graphics, writing samples, and public-facing communications work."}
           </p>
 
-          <div className="mt-10 flex flex-wrap gap-4">
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
             <a
               href="/work"
               className="rounded-full bg-slate-900 px-6 py-3 text-sm font-medium text-white transition hover:bg-slate-700"
@@ -69,7 +69,7 @@ export default async function HomePage() {
             <img
               src={urlFor(home.profileImage).width(900).height(1100).fit("crop").url()}
               alt={home.profileImage.alt || "Portrait"}
-              className="h-[520px] w-full rounded-[1.5rem] object-cover"
+              className="h-[360px] w-full rounded-[1.5rem] object-cover sm:h-[520px]"
             />
           ) : (
             <div className="flex h-[520px] items-center justify-center rounded-[1.5rem] bg-slate-100 text-slate-500">

@@ -20,13 +20,13 @@ export default async function WorkPage() {
   const workItems = await getWorkItems();
 
   return (
-    <section className="min-h-screen bg-slate-50 px-6 py-20">
+    <section className="min-h-screen bg-slate-50 px-6 py-14 sm:py-20">
       <div className="mx-auto max-w-6xl">
         <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
           Portfolio
         </p>
 
-        <h1 className="mt-4 text-5xl font-bold text-slate-900">
+        <h1 className="mt-4 text-4xl font-bold text-slate-900 sm:text-5xl">
           Selected Work
         </h1>
 
@@ -44,7 +44,7 @@ export default async function WorkPage() {
                 key={item._id}
                 className="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
               >
-                <div className="h-64 bg-slate-100">
+                <div className="h-56 bg-slate-100 sm:h-64">
                   {firstImage ? (
                     <img
                       src={urlFor(firstImage).width(900).height(600).fit("crop").url()}
@@ -58,7 +58,7 @@ export default async function WorkPage() {
                   )}
                 </div>
 
-                <div className="p-7">
+                <div className="p-6 sm:p-7">
                   <div className="flex flex-wrap items-center gap-3">
                     <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-slate-600">
                       {item.category}
