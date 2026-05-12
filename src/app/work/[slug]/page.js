@@ -1,4 +1,5 @@
 import { client } from "@/sanity/client";
+import { urlFor } from "@/sanity/image";
 
 async function getWorkItem(slug) {
   return client.fetch(
@@ -9,7 +10,8 @@ async function getWorkItem(slug) {
         fullDescription,
         role,
         impact,
-        link
+        link,
+        gallery
       }
     `,
     { slug }
@@ -51,14 +53,49 @@ export default async function WorkDetailPage({ params }) {
         {workItem.role && (
           <div className="mt-10">
             <h2 className="text-xl font-bold text-slate-900">Role</h2>
-            <p className="mt-3 leading-7 text-slate-600">{workItem.role}</p>
+            <p className="mt-3 leading-7 text-slate-600">
+              {workItem.role}
+            </p>
           </div>
         )}
 
         {workItem.impact && (
           <div className="mt-10">
             <h2 className="text-xl font-bold text-slate-900">Impact</h2>
-            <p className="mt-3 leading-7 text-slate-600">{workItem.impact}</p>
+            <p className="mt-3 leading-7 text-slate-600">
+              {workItem.impact}
+            </p>
+          </div>
+        )}
+
+        {workItem.gallery?.filter((image) => image?.asset).length > 0 && (
+          <div className="mt-12">
+            <h2 className="text-2xl font-bold text-slate-900">
+              Graphics
+            </h2>
+
+            <div className="mt-6 grid gap-6 md:grid-cols-2">
+              {workItem.gallery
+                .filter((image) => image?.asset)
+                .map((image, index) => (
+                  <a
+                    key={image._key || index}
+                    href={urlFor(image).url()}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="block overflow-hidden rounded-3xl border border-slate-200 bg-white"
+                  >
+                    <img
+                      src={urlFor(image).width(1000).url()}
+                      alt={
+                        image.alt ||
+                        `${workItem.title} graphic ${index + 1}`
+                      }
+                      className="h-auto w-full object-cover transition hover:scale-105"
+                    />
+                  </a>
+                ))}
+            </div>
           </div>
         )}
 
@@ -66,6 +103,7 @@ export default async function WorkDetailPage({ params }) {
           <a
             href={workItem.link}
             target="_blank"
+            rel="noreferrer"
             className="mt-10 inline-block rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white hover:bg-slate-700"
           >
             Visit Project
