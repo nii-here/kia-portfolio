@@ -6,12 +6,12 @@ export const homePage = defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'eyebrow',
+      name: 'smallHeading',
       title: 'Small Heading',
       type: 'string',
     }),
     defineField({
-      name: 'headline',
+      name: 'mainHeadline',
       title: 'Main Headline',
       type: 'string',
     }),
@@ -19,6 +19,37 @@ export const homePage = defineType({
       name: 'subtext',
       title: 'Subtext',
       type: 'text',
+    }),
+    defineField({
+      name: 'profileImage',
+      title: 'Profile Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+      fields: [
+        defineField({
+          name: 'alt',
+          title: 'Alt Text',
+          type: 'string',
+        }),
+      ],
+    }),
+    defineField({
+      name: 'bio',
+      title: 'Short Bio',
+      type: 'text',
+    }),
+    defineField({
+      name: 'highlights',
+      title: 'Highlights',
+      type: 'array',
+      of: [{type: 'string'}],
+    }),
+    defineField({
+      name: 'linkedin',
+      title: 'LinkedIn URL',
+      type: 'url',
     }),
   ],
 })

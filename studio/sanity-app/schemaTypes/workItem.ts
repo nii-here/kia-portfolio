@@ -38,6 +38,26 @@ export const workItem = defineType({
       type: 'text',
     }),
     defineField({
+      name: 'gallery',
+      title: 'Project Graphics / Gallery',
+      type: 'array',
+      of: [
+        {
+          type: 'image',
+          options: {
+            hotspot: true,
+          },
+          fields: [
+            defineField({
+              name: 'alt',
+              title: 'Alt Text',
+              type: 'string',
+            }),
+          ],
+        },
+      ],
+    }),
+    defineField({
       name: 'role',
       title: 'Role',
       type: 'string',

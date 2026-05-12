@@ -6,12 +6,12 @@ export const contactPage = defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'eyebrow',
+      name: 'smallHeading',
       title: 'Small Heading',
       type: 'string',
     }),
     defineField({
-      name: 'headline',
+      name: 'mainHeadline',
       title: 'Main Headline',
       type: 'string',
     }),
@@ -24,6 +24,11 @@ export const contactPage = defineType({
       name: 'email',
       title: 'Email Address',
       type: 'string',
+    }),
+    defineField({
+      name: 'linkedin',
+      title: 'LinkedIn URL',
+      type: 'url',
     }),
   ],
 })
