@@ -1,14 +1,73 @@
+/* Import Tailwind CSS */
 @import "tailwindcss";
 
+/* Makes sizing easier to control across the whole site */
 * {
   box-sizing: border-box;
 }
 
+/* Smooth scrolling when clicking page links */
 html {
   scroll-behavior: smooth;
 }
 
+/* Global body styles for the whole website */
 body {
   margin: 0;
+  min-height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Makes images behave better on mobile */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Removes default underline styling unless added by Tailwind */
+a {
+  text-decoration: none;
+}
+
+/* Better default selection highlight */
+::selection {
+  background: #0f172a;
+  color: #ffffff;
+}
+
+/* Improves page spacing on smaller screens */
+@media (max-width: 640px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  h1 {
+    letter-spacing: -0.03em;
+  }
+
+  p {
+    line-height: 1.75;
+  }
+}
+
+/* Makes focus outlines visible for keyboard users */
+:focus-visible {
+  outline: 3px solid #94a3b8;
+  outline-offset: 4px;
+}
+
+/* Soft page background effect */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at top left, rgba(148, 163, 184, 0.18), transparent 28rem),
+    radial-gradient(circle at bottom right, rgba(203, 213, 225, 0.35), transparent 30rem);
 }
