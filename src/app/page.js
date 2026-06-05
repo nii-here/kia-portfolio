@@ -1,6 +1,8 @@
 import { client } from "@/sanity/client";
 import { urlFor } from "@/sanity/image";
 
+export const revalidate = 0;
+
 // Fetch Home page content from Sanity CMS
 // This grabs the first Home Page document and returns the needed fields
 async function getHomePage() {

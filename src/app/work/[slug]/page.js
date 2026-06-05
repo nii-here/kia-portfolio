@@ -1,6 +1,8 @@
 import { client } from "@/sanity/client";
 import { urlFor } from "@/sanity/image";
 
+export const revalidate = 0;
+
 // Fetch one work item from Sanity based on the page slug
 // Example URL: /work/community-policy-newsletter
 async function getWorkItem(slug) {

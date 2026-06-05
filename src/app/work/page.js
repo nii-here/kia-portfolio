@@ -2,6 +2,8 @@ import Link from "next/link";
 import { client } from "@/sanity/client";
 import { urlFor } from "@/sanity/image";
 
+export const revalidate = 0;
+
 // Fetch all work items from Sanity CMS
 // Featured projects appear first
 // Newer projects appear before older ones

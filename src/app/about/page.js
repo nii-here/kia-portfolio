@@ -1,6 +1,9 @@
 import { client } from "@/sanity/client";
 import { urlFor } from "@/sanity/image";
 
+export const revalidate = 0;
+
+
 // Fetch About page content from Sanity CMS
 // This grabs the first About Page document and returns all needed fields
 async function getAboutPage() {
