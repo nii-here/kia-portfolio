@@ -22,7 +22,7 @@ export default function Navbar() {
           href="/"
           className="text-xl font-bold tracking-tight text-slate-900"
         >
-          Kia Clair
+          FolioPress
         </Link>
 
         {/* Navigation links */}

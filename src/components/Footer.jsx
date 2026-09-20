@@ -12,7 +12,7 @@ export default function Footer() {
         {/* Copyright text */}
         {/* Automatically updates the year using JavaScript */}
         <p>
-          © {new Date().getFullYear()} Kia Clair. All rights reserved.
+          © {new Date().getFullYear()} FolioPress. Portfolio demo by Clement Tetteh.
         </p>
 
       </div>

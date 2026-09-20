@@ -1,4 +1,5 @@
-import { createClient } from "next-sanity";
+// Connect the website directly to Sanity's content API.
+import { createClient } from "@sanity/client";
 
 export const client = createClient({
   projectId: "1s7dnh3o",

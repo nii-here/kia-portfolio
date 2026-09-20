@@ -8,8 +8,8 @@ import Footer from "@/components/Footer";
 /* Website metadata */
 /* Controls browser tab title and SEO description */
 export const metadata = {
-  title: "Kia Clair",
-  description: "Communications and policy portfolio website",
+  title: "FolioPress",
+  description: "CMS Portfolio Demo",
 };
 
 // Root layout component

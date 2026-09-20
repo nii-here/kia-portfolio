@@ -67,11 +67,9 @@ export default async function ContactPage() {
 
                 {/* Loop through service/focus area list */}
                 {[
-                  "Communications Projects",
-                  "Policy Writing",
-                  "Content Strategy",
-                  "Newsletter Design",
-                  "Community Outreach",
+                  "Website Development",
+                  "CMS Integration",
+                  "Frontend Development",
                 ].map((item) => (
 
                   // Individual badge/pill
